@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storage: {fileID: 1275520749}
-  prefab: {fileID: 1870825588425898761, guid: eaedd1ae863e0b44f955a8df74652075, type: 3}
+  shapeFactory: {fileID: 11400000, guid: 9a7aaba1b5e561641bfb353cb7e0761f, type: 2}
   createKey: 99
   newGameKey: 110
   saveKey: 115
