@@ -14,6 +14,7 @@ public class PersistentStorage : MonoBehaviour
     {
         using (var writer = new BinaryWriter(File.Open(savePath, FileMode.Create)))
         {
+            writer.Write(-version);
             o.Save(new GameDataWriter(writer));
         }
     }

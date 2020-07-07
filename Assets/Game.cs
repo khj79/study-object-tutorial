@@ -9,15 +9,22 @@ public class Game : PersistableObject
     public KeyCode newGameKey = KeyCode.N;
     public KeyCode saveKey = KeyCode.S;
     public KeyCode loadKey = KeyCode.L;
+    public KeyCode destroyKey = KeyCode.X;
 
     private const int saveVersion = 1;
     private List<Shape> shapes;
+    private float creationProgress;
+    private float destructionProgress;
+
+    public float CreationSpeed { get; set; }
+    public float DestructionSpeed { get; set; }
+
 
     private void BeginNewGame()
     {
         for (int i = 0; i < shapes.Count; ++i)
         {
-            Destroy(shapes[i].gameObject);
+            shapeFactory.Reclaim(shapes[i]);
         }
 
         shapes.Clear();
@@ -42,6 +49,18 @@ public class Game : PersistableObject
         shapes.Add(instance);
     }
 
+    private void DestroyShape()
+    {
+        if (shapes.Count > 0)
+        {
+            int index = Random.Range(0, shapes.Count);
+            shapeFactory.Reclaim(shapes[index]);
+            int lastIndex = shapes.Count -1;
+            shapes[index] = shapes[lastIndex];
+            shapes.RemoveAt(lastIndex);
+        }
+    }
+
     private void Awake()
     {
         shapes = new List<Shape>();
@@ -52,6 +71,10 @@ public class Game : PersistableObject
         if (Input.GetKeyDown(createKey))
         {
             CreateShape();
+        }
+        else if (Input.GetKeyDown(destroyKey))
+        {
+            DestroyShape();
         }
         else if (Input.GetKeyDown(newGameKey))
         {
@@ -65,6 +88,22 @@ public class Game : PersistableObject
         {
             BeginNewGame();
             storage.Load(this);
+        }
+
+        creationProgress += Time.deltaTime * CreationSpeed;
+        
+        while (creationProgress >= 1f)
+        {
+            creationProgress -= 1f;
+            CreateShape();
+        }
+
+        destructionProgress += Time.deltaTime * DestructionSpeed;
+
+        while (destructionProgress >= 1f)
+        {
+            destructionProgress -= 1f;
+            DestroyShape();
         }
     }
 
