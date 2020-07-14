@@ -36,13 +36,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\CompositeSpawnZone.cs" />
+     <Compile Include="Assets\CubeSpawnZone.cs" />
      <Compile Include="Assets\Game.cs" />
      <Compile Include="Assets\GameDataReader.cs" />
      <Compile Include="Assets\GameDataWriter.cs" />
+     <Compile Include="Assets\GameLevel.cs" />
      <Compile Include="Assets\PersistableObject.cs" />
      <Compile Include="Assets\PersistentStorage.cs" />
      <Compile Include="Assets\Shape.cs" />
      <Compile Include="Assets\ShapeFactory.cs" />
+     <Compile Include="Assets\SpawnZone.cs" />
+     <Compile Include="Assets\SphereSpawnZone.cs" />
      <None Include="Assets\InstancedColors.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
