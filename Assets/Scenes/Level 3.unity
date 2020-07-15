@@ -375,6 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e16598ee2a60fb48aea99d5e46d7c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sequential: 1
   spawnZones:
   - {fileID: 2063276168}
   - {fileID: 1547477391}
@@ -428,6 +429,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnZone: {fileID: 1911553820}
+  persistentObjects:
+  - {fileID: 1911553820}
 --- !u!4 &1920138339
 Transform:
   m_ObjectHideFlags: 0

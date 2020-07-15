@@ -42,4 +42,9 @@ public class GameDataWriter
         writer.Write(value.b);
         writer.Write(value.a);
     }
+
+    public void Write(Random.State value)
+    {
+        writer.Write(JsonUtility.ToJson(value));
+    }
 }

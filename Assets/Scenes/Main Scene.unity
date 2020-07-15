@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38490227, g: 0.39734924, b: 0.38356346, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000002, guid: 999dd7b929377aa4dbfaf3ebedb62335,
+  m_LightingDataAsset: {fileID: 112000002, guid: 8e57195b1863fdb44b52036ee4411b55,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -846,13 +846,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storage: {fileID: 1275520749}
-  levelCount: 3
+  levelCount: 4
   createKey: 99
   newGameKey: 110
   saveKey: 115
   loadKey: 108
   destroyKey: 120
   shapeFactory: {fileID: 11400000, guid: 9a7aaba1b5e561641bfb353cb7e0761f, type: 2}
+  reseedOnLoad: 0
+  creationSpeedSlider: {fileID: 1115059043}
+  destructionSpeedSlider: {fileID: 478786201}
 --- !u!4 &1285300959
 Transform:
   m_ObjectHideFlags: 0

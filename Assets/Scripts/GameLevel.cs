@@ -1,11 +1,44 @@
 ﻿using UnityEngine;
 
-public class GameLevel : MonoBehaviour
+public class GameLevel : PersistableObject
 {
     [SerializeField] private SpawnZone spawnZone = null;
+    [SerializeField] private PersistableObject[] persistentObjects;
 
-    private void Start()
+    public static GameLevel Current { get; private set; }
+
+    public Vector3 SpawnPoint
     {
-        Game.Instance.spawnZoneOfLevel = spawnZone;
+        get { return spawnZone.SpawnPoint; }
+    }
+
+    public override void Save(GameDataWriter writer)
+    {
+        writer.Write(persistentObjects.Length);
+
+        for (int i = 0; i < persistentObjects.Length; ++i)
+        {
+            persistentObjects[i].Save(writer);
+        }
+    }
+
+    public override void Load(GameDataReader reader)
+    {
+        int savedCount = reader.ReadInt();
+
+        for (int i = 0; i < savedCount; ++i)
+        {
+            persistentObjects[i].Load(reader);
+        }
+    }
+
+    private void OnEnable()
+    {
+        Current = this;
+
+        if (persistentObjects == null)
+        {
+            persistentObjects = new PersistableObject[0];
+        }
     }
 }
