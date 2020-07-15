@@ -36,19 +36,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\CompositeSpawnZone.cs" />
-     <Compile Include="Assets\CubeSpawnZone.cs" />
-     <Compile Include="Assets\Game.cs" />
-     <Compile Include="Assets\GameDataReader.cs" />
-     <Compile Include="Assets\GameDataWriter.cs" />
-     <Compile Include="Assets\GameLevel.cs" />
-     <Compile Include="Assets\PersistableObject.cs" />
-     <Compile Include="Assets\PersistentStorage.cs" />
-     <Compile Include="Assets\Shape.cs" />
-     <Compile Include="Assets\ShapeFactory.cs" />
-     <Compile Include="Assets\SpawnZone.cs" />
-     <Compile Include="Assets\SphereSpawnZone.cs" />
-     <None Include="Assets\InstancedColors.shader" />
+     <Compile Include="Assets\Scripts\CompositeSpawnZone.cs" />
+     <Compile Include="Assets\Scripts\CubeSpawnZone.cs" />
+     <Compile Include="Assets\Scripts\Game.cs" />
+     <Compile Include="Assets\Scripts\GameDataReader.cs" />
+     <Compile Include="Assets\Scripts\GameDataWriter.cs" />
+     <Compile Include="Assets\Scripts\GameLevel.cs" />
+     <Compile Include="Assets\Scripts\PersistableObject.cs" />
+     <Compile Include="Assets\Scripts\PersistentStorage.cs" />
+     <Compile Include="Assets\Scripts\Shape.cs" />
+     <Compile Include="Assets\Scripts\ShapeFactory.cs" />
+     <Compile Include="Assets\Scripts\SpawnZone.cs" />
+     <Compile Include="Assets\Scripts\SphereSpawnZone.cs" />
+     <None Include="Assets\Shaders\InstancedColors.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
