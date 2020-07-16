@@ -6,19 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class Game : PersistableObject
 {
-    [SerializeField] private  PersistentStorage storage = null;
-    [SerializeField] private  int levelCount = 0;
-    [SerializeField] private  KeyCode createKey = KeyCode.C;
-    [SerializeField] private  KeyCode newGameKey = KeyCode.N;
-    [SerializeField] private  KeyCode saveKey = KeyCode.S;
-    [SerializeField] private  KeyCode loadKey = KeyCode.L;
-    [SerializeField] private  KeyCode destroyKey = KeyCode.X;
+    [SerializeField] private PersistentStorage storage = null;
+    [SerializeField] private int levelCount = 0;
+    [SerializeField] private KeyCode createKey = KeyCode.C;
+    [SerializeField] private KeyCode newGameKey = KeyCode.N;
+    [SerializeField] private KeyCode saveKey = KeyCode.S;
+    [SerializeField] private KeyCode loadKey = KeyCode.L;
+    [SerializeField] private KeyCode destroyKey = KeyCode.X;
     [SerializeField] private ShapeFactory shapeFactory = null;
     [SerializeField] private bool reseedOnLoad = false;
     [SerializeField] private Slider creationSpeedSlider = null;
     [SerializeField] private Slider destructionSpeedSlider = null;
     
-    private const int saveVersion = 3;
+    private const int saveVersion = 4;
     private List<Shape> shapes;
     private float creationProgress;
     private float destructionProgress;
@@ -71,19 +71,7 @@ public class Game : PersistableObject
     private void CreateShape()
     {
         Shape instance = shapeFactory.GetRandom();
-
-        Transform t = instance.transform;
-        t.localPosition = GameLevel.Current.SpawnPoint;
-        t.localRotation = Random.rotation;
-        t.localScale = Vector3.one * Random.Range(0.1f, 1f);
-        instance.SetColor(Random.ColorHSV
-        (
-            hueMin: 0f, hueMax: 1f,
-            saturationMin: 0.5f, saturationMax: 1f,
-            valueMin: 0.25f, valueMax: 1f,
-            alphaMin: 1f, alphaMax: 1f
-        ));
-        
+        GameLevel.Current.ConfigureSpawn(instance);
         shapes.Add(instance);
     }
 
@@ -164,6 +152,11 @@ public class Game : PersistableObject
 
     private void FixedUpdate()
     {
+        for (int i = 0; i < shapes.Count; ++i)
+        {
+            shapes[i].GameUpdate();
+        }
+        
         creationProgress += Time.deltaTime * CreationSpeed;
         
         while (creationProgress >= 1f)

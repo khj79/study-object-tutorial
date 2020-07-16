@@ -7,9 +7,9 @@ public class GameLevel : PersistableObject
 
     public static GameLevel Current { get; private set; }
 
-    public Vector3 SpawnPoint
+    public void ConfigureSpawn(Shape shape)
     {
-        get { return spawnZone.SpawnPoint; }
+        spawnZone.ConfigureSpawn(shape);
     }
 
     public override void Save(GameDataWriter writer)

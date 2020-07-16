@@ -36,8 +36,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ColorRangeHSV.cs" />
      <Compile Include="Assets\Scripts\CompositeSpawnZone.cs" />
      <Compile Include="Assets\Scripts\CubeSpawnZone.cs" />
+     <Compile Include="Assets\Scripts\FloatRange.cs" />
+     <Compile Include="Assets\Scripts\FloatRangeSliderAttribute.cs" />
      <Compile Include="Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Scripts\GameDataReader.cs" />
      <Compile Include="Assets\Scripts\GameDataWriter.cs" />
