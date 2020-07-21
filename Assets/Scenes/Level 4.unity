@@ -306,6 +306,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnConfig:
+    uniformColor: 0
+    factories:
+    - {fileID: 11400000, guid: 9a7aaba1b5e561641bfb353cb7e0761f, type: 2}
     movementDirection: 0
     speed:
       min: 0
@@ -375,6 +378,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnConfig:
+    uniformColor: 0
+    factories:
+    - {fileID: 11400000, guid: 2ce11c84f2ece174f90fb1052d486af8, type: 2}
     movementDirection: 1
     speed:
       min: 1
@@ -532,6 +538,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnConfig:
+    uniformColor: 1
+    factories:
+    - {fileID: 11400000, guid: 9a7aaba1b5e561641bfb353cb7e0761f, type: 2}
     movementDirection: 2
     speed:
       min: 10

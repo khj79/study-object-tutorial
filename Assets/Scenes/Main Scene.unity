@@ -852,10 +852,12 @@ MonoBehaviour:
   saveKey: 115
   loadKey: 108
   destroyKey: 120
-  shapeFactory: {fileID: 11400000, guid: 9a7aaba1b5e561641bfb353cb7e0761f, type: 2}
   reseedOnLoad: 0
   creationSpeedSlider: {fileID: 1115059043}
   destructionSpeedSlider: {fileID: 478786201}
+  shapeFactories:
+  - {fileID: 11400000, guid: 9a7aaba1b5e561641bfb353cb7e0761f, type: 2}
+  - {fileID: 11400000, guid: 2ce11c84f2ece174f90fb1052d486af8, type: 2}
 --- !u!4 &1285300959
 Transform:
   m_ObjectHideFlags: 0

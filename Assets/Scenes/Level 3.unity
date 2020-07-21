@@ -244,6 +244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnConfig:
+    uniformColor: 0
+    factories: []
     movementDirection: 0
     speed:
       min: 0
@@ -254,6 +256,16 @@ MonoBehaviour:
     scale:
       min: 0
       max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
   surfaceOnly: 1
 --- !u!4 &946366498
 Transform:
@@ -299,6 +311,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnConfig:
+    uniformColor: 0
+    factories: []
     movementDirection: 0
     speed:
       min: 0
@@ -309,6 +323,16 @@ MonoBehaviour:
     scale:
       min: 0
       max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
   surfaceOnly: 1
 --- !u!4 &1547477392
 Transform:
@@ -354,6 +378,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnConfig:
+    uniformColor: 0
+    factories: []
     movementDirection: 0
     speed:
       min: 0
@@ -364,6 +390,16 @@ MonoBehaviour:
     scale:
       min: 0
       max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
   surfaceOnly: 0
 --- !u!4 &1812478327
 Transform:
@@ -409,6 +445,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnConfig:
+    uniformColor: 0
+    factories:
+    - {fileID: 11400000, guid: 2ce11c84f2ece174f90fb1052d486af8, type: 2}
+    - {fileID: 11400000, guid: 9a7aaba1b5e561641bfb353cb7e0761f, type: 2}
     movementDirection: 3
     speed:
       min: 10
@@ -419,6 +459,16 @@ MonoBehaviour:
     scale:
       min: 0.5
       max: 10
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
   sequential: 1
   overrideConfig: 1
   spawnZones:
@@ -520,6 +570,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnConfig:
+    uniformColor: 0
+    factories: []
     movementDirection: 0
     speed:
       min: 0
@@ -530,6 +582,16 @@ MonoBehaviour:
     scale:
       min: 0
       max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
   surfaceOnly: 0
 --- !u!4 &2063276169
 Transform:
