@@ -38,6 +38,7 @@ public class Shape : PersistableObject
     public float Age { get; private set; }
     public int InstanceId { get; private set; }
     public int SaveIndex { get; set; }
+    public bool IsMarkedAsDying { get { return Game.Instance.IsMarkedAsDying(this); } }
     private ShapeFactory originFactory;
     private static int colorPropertyId = Shader.PropertyToID("_Color");
     private static MaterialPropertyBlock sharedPropertyBlock;
@@ -225,4 +226,16 @@ public class Shape : PersistableObject
             behaviorList[i].ResolveShapeInstances();
         }
     }
+
+    public void Die()
+    {
+        Game.Instance.Kill(this);
+    }
+
+    public void MarkAsDying()
+    {
+        Game.Instance.MarkAsDying(this);
+    }
+
+    
 }

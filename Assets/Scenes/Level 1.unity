@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.16788375, g: 0.21073635, b: 0.28994125, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -155,7 +155,7 @@ MonoBehaviour:
     uniformColor: 1
     factories:
     - {fileID: 11400000, guid: 9a7aaba1b5e561641bfb353cb7e0761f, type: 2}
-    movementDirection: 0
+    movementDirection: 2
     speed:
       min: 1
       max: 2
@@ -164,21 +164,21 @@ MonoBehaviour:
       max: 90
     scale:
       min: 1
-      max: 1.2
+      max: 2
     color:
       hue:
-        min: 0.33990377
+        min: 0
         max: 1
       saturation:
         min: 0
-        max: 0.5775842
+        max: 1
       value:
-        min: 0.2658721
-        max: 0.8801284
+        min: 0
+        max: 1
     oscillationDirection: 2
     oscillationAmplitude:
-      min: 0.1
-      max: 1
+      min: 0
+      max: 0
     oscillationFrequency:
       min: 1
       max: 1
@@ -195,6 +195,16 @@ MonoBehaviour:
       orbitFrequency:
         min: 0.25
         max: 0.5
+    lifecycle:
+      growingDuration:
+        min: 1
+        max: 2
+      adultDuration:
+        min: 1
+        max: 5
+      dyingDuration:
+        min: 1
+        max: 2
   surfaceOnly: 1
 --- !u!4 &787997312
 Transform:
@@ -203,13 +213,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787997310}
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 2, z: 5}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &855988420
 GameObject:
   m_ObjectHideFlags: 0
