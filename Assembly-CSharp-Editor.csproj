@@ -39,6 +39,8 @@
      <Compile Include="Assets\Particles\Shared\Ramps\Editor\RampAssetEditor.cs" />
      <Compile Include="Assets\Scripts\Editor\FloatRangeDrawer.cs" />
      <Compile Include="Assets\Scripts\Editor\FloatRangeSliderDrawer.cs" />
+     <Compile Include="Assets\Scripts\Editor\GameLevelInspector.cs" />
+     <Compile Include="Assets\Scripts\Editor\RegisterLevelObjectMenuItem.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

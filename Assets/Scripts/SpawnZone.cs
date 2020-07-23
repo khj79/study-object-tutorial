@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class SpawnZone : PersistableObject
+public abstract class SpawnZone : GameLevelObject
 {
     [System.Serializable]
     public struct SpawnConfiguration
@@ -51,7 +51,9 @@ public abstract class SpawnZone : PersistableObject
         public LifecycleConfiguration lifecycle;
     }
 
-    [SerializeField] SpawnConfiguration spawnConfig;
+    [SerializeField] private SpawnConfiguration spawnConfig;
+    [SerializeField, Range(0f, 50f)] private float spawnSpeed = 0f;
+    private float spawnProgress;
         
     public abstract Vector3 SpawnPoint { get; }
 
@@ -59,6 +61,7 @@ public abstract class SpawnZone : PersistableObject
     {
         int factoryIndex = Random.Range(0, spawnConfig.factories.Length);
         Shape shape = spawnConfig.factories[factoryIndex].GetRandom();
+        shape.gameObject.layer = gameObject.layer;
         Transform t = shape.transform;
         t.localPosition = SpawnPoint;
         t.localRotation = Random.rotation;
@@ -92,6 +95,27 @@ public abstract class SpawnZone : PersistableObject
         }
 
         SetupLifecycle(shape, lifecycleDurations);
+    }
+
+    public override void GameUpdate()
+    {
+        spawnProgress += Time.deltaTime * spawnSpeed;
+
+        while (spawnProgress >= 1f)
+        {
+            spawnProgress -= 1f;
+            SpawnShapes();
+        }
+    }
+
+    public override void Save(GameDataWriter writer)
+    {
+        writer.Write(spawnProgress);
+    }
+
+    public override void Load(GameDataReader reader)
+    {
+        spawnProgress = reader.ReadFloat();
     }
 
     private Vector3 GetDirectionVector(SpawnConfiguration.MovementDirection direction, Transform t)
@@ -128,6 +152,7 @@ public abstract class SpawnZone : PersistableObject
     {
         int factoryIndex = Random.Range(0, spawnConfig.factories.Length);
         Shape shape = spawnConfig.factories[factoryIndex].GetRandom();
+        shape.gameObject.layer = gameObject.layer;
         Transform t = shape.transform;
         t.localRotation = Random.rotation;
         t.localScale = focalShape.transform.localScale * spawnConfig.satellite.relativeScale.RandomValueInRange;

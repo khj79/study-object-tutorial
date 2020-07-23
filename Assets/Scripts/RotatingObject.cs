@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class RotatingObject : PersistableObject
+public class RotatingObject : GameLevelObject
 {
     [SerializeField] private Vector3 angularVelocity = Vector3.zero;
 
-    private void FixedUpdate()
+    public override void GameUpdate()
     {
         transform.Rotate(angularVelocity * Time.deltaTime);
     }

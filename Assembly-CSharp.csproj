@@ -51,9 +51,13 @@
      <Compile Include="Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Scripts\GameDataReader.cs" />
      <Compile Include="Assets\Scripts\GameDataWriter.cs" />
+     <Compile Include="Assets\Scripts\GameLevel.Editor.cs" />
      <Compile Include="Assets\Scripts\GameLevel.cs" />
+     <Compile Include="Assets\Scripts\GameLevelObject.cs" />
      <Compile Include="Assets\Scripts\GrowingShapeBehavior.cs" />
      <Compile Include="Assets\Scripts\IntRange.cs" />
+     <Compile Include="Assets\Scripts\KillZone.cs" />
+     <Compile Include="Assets\Scripts\LifeZone.cs" />
      <Compile Include="Assets\Scripts\LifecycleShapeBehavior.cs" />
      <Compile Include="Assets\Scripts\MovementShapeBehavior.cs" />
      <Compile Include="Assets\Scripts\OscillationShapeBehavior.cs" />

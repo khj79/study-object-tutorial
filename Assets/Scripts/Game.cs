@@ -19,7 +19,7 @@ public class Game : PersistableObject
     [SerializeField] private ShapeFactory[] shapeFactories = null;
     [SerializeField] private float destroyDuration = 1f;
     
-    private const int saveVersion = 6;
+    private const int saveVersion = 7;
     private List<Shape> shapes;
     private List<ShapeInstance> killList;
     private List<ShapeInstance> markAsDyingList;
@@ -165,6 +165,7 @@ public class Game : PersistableObject
             shapes[i].GameUpdate();
         }
         
+        GameLevel.Current.GameUpdate();
         inGameUpdateLoop = false;
         creationProgress += Time.deltaTime * CreationSpeed;
         
